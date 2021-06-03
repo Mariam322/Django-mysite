@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+  
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  {% include 'base.html'%}
+<em><center> <h1 class="test-center mt-3">Bienvenue sur notre site</h1></center> </em>
+{% block body %}
+<form method='POST' class="post-form">
+{% csrf_token %}
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for article in list %}
+        <div class="col">
+          <div class="card h-100">
+            <img src='{{ MEDIA_URL }}{{ article.img }}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{article.libelle}}</h5>
+              <p class="card-text">{{article.prix}} DT</p>
+              <p class="card-text">{{article.description}}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{%url 'detail' article.id %}" class="btn btn-primary">consulter</a>
+                <a href="{%url 'cart'  %}" class="btn btn-primary">Ajouter au panier </a>
+                
+			        	
+            </div>
+          </div>
+        </div>
+       
+      {% endfor %}
+    </form>
+    
+    {% endblock %}
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="/">Biblio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/Bibliotheque/"> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'livres'  %}">Livres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'contact'  %}"> a propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'cont'  %}">contacter nous</a>
+        </li>
+      </ul>
+    </div>
+</div>
+
+  </nav>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <style>
+    body { 
+    background: url('{% static "imaage/cc.jpg" %}') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+   }
+   .col{
+ 
+    padding: 15px;
+  }
+  </style>
+  </head>
+<body>
+ 
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100" style="width: 25rem;">
+        <img src='/media/img3.jpg' class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Le Pouvoir Interieur</h5>
+          <p class="card-text ">La confiance en soi est un choix. L'estime de soi est une vertu. L'amour de soi est un devoir.
+            Le pouvoir intérieur est un véritable guide pour les personnes souhaitant développer, bâtir et renforcer leur estime personnelle.</p>
+        </div>
+       
+      </div>
+    </div>
+     <div class="col">
+      <div class="card h-100" style="width: 25rem;">
+        <img src="/media/img2.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">le maitre des illusion</h5>
+          <p class="card-text margin-top=5rem ">En décrochant une bourse à l'université de Hampden, dans le Vermont, Richard Papen ne laisse pas grand chose derrière lui : la Californie, qui lui déplaît ; son adolescence, faite de souvenirs incolores ; et ses parents, avec qui il ne s'entend pas. Hampden est une porte de sortie inespérée, l'opportunité de vivre une nouvelle vie. </p>
+        </div>
+      
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="width: 25rem;">
+        <img src="/media/img1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">La nuit blanche de Zoé</h5>
+          <p class="card-text">Zoé est à la montagne avec ses amis. Zoé est belle mais elle n'est pas très sportive! Une nuit, elle tombe de luge et perd sa montre en or sous la neige. Les amis décident alors d'aller chercher monsieur Paul, le professeur de ski d'Elsa, et son chien de montagne... un parcours qui va mener Zoé ver l'amour et l'avalanche !</p>
+          <p class="card-text">{{ Book.isbn }}</p>
+          <p class="card-text">{{ Book.language }}</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100" style="width: 25rem;">
+        <img src='/media/img7.jpg' class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Le Pouvoir Interieur</h5>
+          <p class="card-text">L'estime personnelle et la confiance en soi ne sont pas des qualités innées. Nous devons les acquérir avec l'aide de quelqu'un, quelque part. Nos parents doivent nous transmettre ces qualités. S'ils ne le font pas, pour pouvoir aller de l'avant, il faut d'abord leurs pardonner. C'est à parti de ce moment là que chacun pourra se construire, faire ses propres choix, prendre des directions, et ainsi développer sa confiance en soi.</p>
+        </div>
+      
+      </div>
+    </div>
+     <div class="col">
+      <div class="card h-100" style="width: 25rem;">
+        <img src="/media/img8.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">le maitre des illusion</h5>
+          <p class="card-text">En décrochant une bourse à l'université de Hampden, dans le Vermont, Richard Papen ne laisse pas grand chose derrière lui : la Californie, qui lui déplaît ; son adolescence, faite de souvenirs incolores ; et ses parents, avec qui il ne s'entend pas. Hampden est une porte de sortie inespérée, l'opportunité de vivre une nouvelle vie</p>
+        </div>
+       
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="width: 25rem;">
+        <img src="/media/img9.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Le fils</h5>
+          <p class="card-text">Roman familial, vaste fresque de l’Amérique des années 1850 à nos jours, Le Fils de Philipp Meyer, finaliste du prestigieux Prix Pulitzer 2014, est porté par trois personnages – trois
+            générations d’une famille texane, les McCullough – dont les voix successives tissent et explorent avec brio la part d’ombre du rêve américain.</p>
+          <p class="card-text">{{ Book.isbn }}</p>
+          <p class="card-text">{{ Book.language }}</p>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+  
+   </body>

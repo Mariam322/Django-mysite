@@ -1,0 +1,8 @@
+{% include 'base.html'%}
+<em><h1 class='text-center mt-2'>Détail article</h1></em>
+<img src='{{ MEDIA_URL }}{{ article.img }}'' alt="">
+<h2>Nom d'ARTICLE <input type="text" value="{{article.libelle}}"></h2>
+<p>{{article.prix}} DT</p>
+<h1>{{article.description}}</h1>
+ 
+

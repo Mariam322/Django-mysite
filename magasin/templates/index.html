@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+
+	<h2>Mes articles...... </h2>
+	{% for prod in list %}
+		<h2>{{prod.libelle}}, {{prod.prix}}</h2>
+	{% endfor %}
+
+{% endblock %}

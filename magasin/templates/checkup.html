@@ -1,0 +1,80 @@
+{% include 'base.html'%}
+{% load static %}
+{% block content %}
+     <div class="row">
+		<div class="col-lg-6">
+			<div class="box-element" id="form-wrapper">
+				<form id="form">
+					<div id="user-info">
+                        <hr>
+						<p>Information Personnel:</p>
+						<hr>
+						<div class="form-field">
+							<input required class="form-control" type="text" name="nom" placeholder="Name..">
+						</div>
+						<div class="form-field">
+							<input required class="form-control" type="email" name="email" placeholder="Email..">
+						</div>
+					</div>
+					
+					<div id="shipping-info">
+						<hr>
+						<p>
+							Informations sur la livraison:</p>
+						<hr>
+						<div class="form-field">
+							<input class="form-control" type="text" name="address" placeholder="Address..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="Pays" placeholder="Pays..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="Etat" placeholder="Etat..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="code Postal" placeholder="code Postal..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="ville" placeholder="ville..">
+						</div>
+					</div>
+                    <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <label class="form-check-label" for="gridCheck">
+                            Vérification
+                          </label>
+                        </div>
+                      </div>
+
+					<hr>
+					<input id="form-button" class="btn btn-primary" type="submit" value="Continue">
+                    <input id="form-button" class="btn btn-primary" type="submit" value="annuler">
+				</form>
+			</div>
+
+			<br>
+			<div class="box-element hidden" id="payment-info">
+				<small>options de payement</small>
+			</div>
+			
+		</div>
+
+		<div class="col-lg-6">
+			<div class="box-element">
+				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Retour a la carte</a>
+				<hr>
+				<h3>Récapitulatif de la commande</h3>
+				<hr>
+				<div class="cart-row">
+					<div style="flex:2"><img class="row-image" src="{% static 'images/cahierrr.jpg' %}"></div>
+					<div style="flex:2"><p>Produit 1</p></div>
+					<div style="flex:1"><p>500.000dt</p></div>
+					<div style="flex:1"><p>1</p></div>
+				</div>
+				<h5>éléments:   1</h5>
+				<h5>Total:   500.000dt</h5>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
